@@ -20,7 +20,7 @@
         |
       | 22
       a 哈哈
-        MyImg(name='logo' :width=60 :height=60 str='str..' @click='iconClick')
+        MyImg(name='logo' :width=60 :height=60 str='str22' @click='iconClick')
       Icon(name='icon-hanbao' @click='iconClick')
 
   //- div.login dd
