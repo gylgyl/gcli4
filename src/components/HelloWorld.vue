@@ -1,43 +1,72 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa" target="_blank" rel="noopener">pwa</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+<template lang="pug">
+  div.hello 
+    h1.bg-blue {{msg}}
+    a(href='https://baidu.com') 百度
+    br
+    label(for='chk1') 
+      input( id='chk1' type='checkbox' name='hah' checked) 
+      span 选项1
+      
+    label(for='chk2' ) 
+      input(id='chk2' type='checkbox' name='hah' ) 
+      span 选项2
+    p(@click='clickFn();clickFn2(6)' ) 点我
+    div 
+      button(:class='`btn-${str1}`' class='btn1') class拼接 按钮{{str1}}
+      span(v-show='vshowb') vshowb = {{vshowb}}
+      span(v-show='!vshowb') vshowb = {{vshowb}} 
+      p
+        | 管道文字
+        |
+      | 22
+      a 哈哈
+        MyImg(name='logo' :width=60 :height=60 str='str..' @click='iconClick')
+      Icon(name='icon-hanbao' @click='iconClick')
+
+  //- div.login dd
+  //-   h1.login__title.ml15 注册/登陆    
+  //-   div.login__form.mt15.ml15      
+  //-     van-field.login__form__input(placeholder="输入手机号" v-model="phone")     
+  //-     div.login__form__protocol.mt15        
+  //-       div.login__form__protocol__tips.dib.text-weak 注册或登录即表示同意        
+  //-       div.login__form__protocol__name.dib.color-orange 《用户协议》      
+  //-     app-button.mt15(size="large"        
+  //-       theme="orange"        
+  //-       :disabled="phone.length !== 11"       
+  //-       @click="handleSubmit"      
+  //-     ) 下一步
+
+
 </template>
 
 <script>
+import Icon from './Icon.vue'
+import MyImg from './MyImg.vue'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components: {
+    Icon,
+    MyImg
+  },
+  data() {
+    return {
+      str1: 'sssstr1',
+      vshowb: false
+    }
+  },
+  methods: {
+    clickFn(){
+      console.log('点击');
+    },
+    clickFn2(a){
+      console.log('dianji',a);
+    },
+    iconClick(){
+      console.log('iconClick');
+    }
   }
 }
 </script>

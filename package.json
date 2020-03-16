@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "genlog": "conventional-changelog -p angular -i .github/CHANGELOG.md -s"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -30,6 +31,9 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.1.2",
     "prettier": "^1.19.1",
+    "pug": "^2.0.4",
+    "pug-html-loader": "^1.1.5",
+    "pug-plain-loader": "^1.0.0",
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"

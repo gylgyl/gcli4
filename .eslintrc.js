@@ -3,16 +3,22 @@ module.exports = {
   env: {
     node: true
   },
-  'extends': [
-    'plugin:vue/essential',
-    'eslint:recommended',
-    '@vue/prettier'
-  ],
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
+  extends: ['plugin:vue/essential'],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    quotes: ['error', 'single'],
+    indent: ['error', 2, {
+      MemberExpression: 'off'
+    }],
+    'arrow-parens': 0,
+    'no-loop-func': 2,
+    'space-before-function-paren': ['error', 'never'],
+    indent: ['error', 2, {
+      SwitchCase: 1
+    }]
+  },
+  parserOptions: {
+    parser: require.resolve('babel-eslint'),
+    ecmaVersion: 2018,
+    sourceType: 'module'
   }
 }
