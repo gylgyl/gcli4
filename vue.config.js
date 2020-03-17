@@ -20,6 +20,9 @@ module.exports = {
       }
     }
   },
+  devServer: {
+    historyApiFallback: true
+  },
   chainWebpack: (config) => {
     config.module
       .rule('pug')
@@ -28,5 +31,6 @@ module.exports = {
       .loader('pug-html-loader')
       .end()
     config.resolve.alias.set('@', resolve('src')).set('@assets', resolve('src/assets'))
-  }
+  },
+  dev
 }

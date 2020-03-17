@@ -5,6 +5,11 @@ import router from './router'
 import store from './store'
 import '@/assets/styles/index.scss'
 
+// 引入全局组件
+import './global'
+// 引入mock
+import '@/mock'
+
 Vue.config.productionTip = false
 
 new Vue({

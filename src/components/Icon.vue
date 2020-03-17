@@ -5,7 +5,7 @@
 export default {
   props: { name: String },
   created() {
-    console.log(this.name)
+    // console.log(this.name)
   }
 }
 </script>
