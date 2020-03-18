@@ -37,6 +37,11 @@ const routes = [
     path: '/show/:id',
     name: 'HomeShow',
     component: () => import('../views/Show.vue')
+  },
+  {
+    path: '/loginAndLogout',
+    name: 'LoginAndLogout',
+    component: () => import('../views/LoginAndLogout.vue')
   }
 ]
 

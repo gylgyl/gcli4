@@ -31,6 +31,5 @@ module.exports = {
       .loader('pug-html-loader')
       .end()
     config.resolve.alias.set('@', resolve('src')).set('@assets', resolve('src/assets'))
-  },
-  dev
+  }
 }

@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> | <router-link to="/about">About</router-link> |
-      <router-link to="/show/1">Show</router-link>
+      <router-link to="/">Home</router-link> | <router-link to="/about">按钮组件</router-link> |
+      <router-link to="/show/1">render</router-link> |
+      <router-link to="/loginAndLogout">登录与退出</router-link> 
     </div>
     <span>{{ $route.meta.keepAlive }}</span>
     <keep-alive :include="include">

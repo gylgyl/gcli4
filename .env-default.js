@@ -1,6 +1,7 @@
 const api = {
-  development: 'http://xxxx:8080',
-  mock: 'http://xxxx',
+  // development: 'http://localhost:8080',
+  development: 'http://apiMock.com',
+  mock: 'http://apiMock.com',
   feature: 'http://xxxx',
   test: 'http://xxxx',
   production: 'http://xxxx'

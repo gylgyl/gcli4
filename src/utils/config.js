@@ -1,0 +1,2 @@
+export const USER_STORAGE = 'USER_STORAGE_G'
+export const TOKEN_STORAGE = 'TOKEN_STORAGE_G'
