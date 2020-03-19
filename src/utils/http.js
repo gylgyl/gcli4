@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { baseURL } from '../../.env-default.js'
-console.log(baseURL, 'baseurl')
 
 const defaultBaseUrl = 'http://localhost:8080/'
 

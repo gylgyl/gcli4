@@ -10,6 +10,13 @@ import './global'
 // 引入mock
 import '@/mock'
 
+// 引入filters
+import * as filters from '@/utils/filters'
+console.log({ filters })
+for (const key in filters) {
+  Vue.filter(key, filters[key])
+}
+
 Vue.config.productionTip = false
 
 new Vue({

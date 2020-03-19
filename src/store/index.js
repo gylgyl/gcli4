@@ -34,7 +34,10 @@ export default new Vuex.Store({
     /**
      * 1. this.$store.dispatch('addCountAction')
      */
-
+    /**
+     * 2.1 import { mapActions } from 'vuex'
+     * 2.2 ...mapActions(['addCountAction'])  等于   this.$store.dispatch('addCountAction')
+     */
     addCountAction({ commit }) {
       setTimeout(() => {
         commit('addCount')
@@ -49,11 +52,3 @@ export default new Vuex.Store({
   },
   modules: {}
 })
-
-let obj2 = { obj: 1, ob: 3 }
-
-function ff({ ob }, b) {
-  console.log(ob, b)
-}
-
-ff(obj2, 2)

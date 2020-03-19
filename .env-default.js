@@ -3,7 +3,7 @@ const api = {
   development: 'http://apiMock.com',
   mock: 'http://apiMock.com',
   feature: 'http://xxxx',
-  test: 'http://xxxx',
+  test: 'http://apiMock.com',
   production: 'http://xxxx'
 }
 

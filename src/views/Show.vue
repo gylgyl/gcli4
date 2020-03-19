@@ -115,7 +115,7 @@ export default {
     // console.log(this,this.$route);
     this.id = this.$route.params.id
     login().then((data) => {
-      console.log({ data })
+      // console.log({ data })
     })
   },
   methods: {

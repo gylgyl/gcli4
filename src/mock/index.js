@@ -6,7 +6,8 @@ Mock.mock(baseURL + '/user/login', 'post', (config) => {
   let data = {
     user: {
       name: 'gyl',
-      age: 23
+      age: 23,
+      sex: 1
     },
     token: 'asdaadddddd'
   }
@@ -14,11 +15,12 @@ Mock.mock(baseURL + '/user/login', 'post', (config) => {
 })
 
 // 获取用户
-Mock.mock(baseURL + '/api/user/info', 'fetch', (config) => {
+Mock.mock(baseURL + '/api/user/info', 'post', (config) => {
   let data = {
     user: {
       name: 'gylget',
-      age: 33
+      age: 33,
+      sex: 0
     },
     token: 'asdaadddddd'
   }
