@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`测试 helloworld has the expected html structure 1`] = `
+<div
+  class="hello"
+>
+  <h1
+    class="bg-blue"
+  >
+    sssstr1
+  </h1>
+  <div
+    class="sonDiv"
+  />
+</div>
+`;

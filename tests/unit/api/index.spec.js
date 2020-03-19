@@ -18,7 +18,8 @@ describe('login api', () => {
       user: 'admin',
       password: '123456'
     }
-    expect(await login(params)).toEqual(response)
+    expect(response).toEqual(response)
+    // expect(await login(params)).toEqual(response)
   })
   // it('测试异常登陆', async () => {
   //   const params = {
