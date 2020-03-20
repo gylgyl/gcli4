@@ -5,7 +5,8 @@ const mixCom = {
         innerHTML: '我是 mixins 的组件'
       },
       style: {
-        color: 'green'
+        color: 'green',
+        fontSize: '16px'
       }
     })
     return h('div', [this.$slots.default, pElem])

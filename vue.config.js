@@ -3,8 +3,9 @@ const path = require('path')
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
+const pxtorem = require('postcss-pxtorem')
 module.exports = {
-  publicPath: process.env === 'production' ? '' : '/',
+  publicPath: process.env === 'production' ? '' : './',
   outputDir: 'dist',
   assetsDir: 'static',
   filenameHashing: true,
@@ -12,11 +13,23 @@ module.exports = {
   runtimeCompiler: false,
   transpileDependencies: [/\/node_modules\/vue-echarts\//, /\/node_modules\/resize-detector\//],
   productionSourceMap: false,
+  devServer: {
+    historyApiFallback: true
+  },
   css: {
     sourceMap: true,
     loaderOptions: {
       sass: {
         prependData: `@import "@/assets/styles/variable.scss";`
+      },
+      postcss: {
+        plugins: [
+          autoprefixer(),
+          pxtorem({
+            rootValue: 37.5,
+            propList: ['*']
+          })
+        ]
       }
     }
   },
