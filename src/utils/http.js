@@ -9,6 +9,9 @@ axios.defaults.timeout = 15000
 // 默认baseurl
 axios.defaults.baseURL = baseURL || defaultBaseUrl
 
+// 前端确定是同个cokiee 验证码这些
+axios.defaults.withCredentials = true
+
 // http request 拦截器
 axios.interceptors.request.use(
   (config) => {

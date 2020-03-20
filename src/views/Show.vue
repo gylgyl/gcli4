@@ -111,6 +111,15 @@ export default {
     showCom,
     inputCom
   },
+  created(){
+    console.log(2);
+    this.$nextTick(()=>{
+      console.log('text',this.text);
+    })
+  },
+  updated(){
+    console.log('update');
+  },
   mounted() {
     // console.log(this,this.$route);
     this.id = this.$route.params.id
@@ -133,8 +142,10 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     // console.log({to, from, next});
+    console.log(1);
     next((vm) => {
-      // console.log({vm});
+      console.log(3);
+      vm.text = '777777'
     })
   }
 }

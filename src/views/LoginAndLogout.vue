@@ -10,6 +10,10 @@
       p.mt12 性别4 全局filter:{{userObj.sex | sexToStr}}
       van-button(type='default' @click='getUser') 获取
       van-button(type='primary' @click='logoutFn') 退出
+    p a:{{obj1.a}}  b:{{obj1.b}} | 
+      span(@click='addA(obj1)') A+ 
+      span(@click='addB(obj1)') B+ 
+      span(@click='addB2') B2+ 
 
 </template>
 <script>
@@ -22,10 +26,25 @@ export default {
   data() {
     return {
       userObj: {},
-      token: ''
+      token: '',
+      obj1: {}
     }
   },
   mounted() {
+    this.obj1 = { a: 1 }
+    this.obj1.b = 2
+    this.$set(this.obj1, 'c', 0)
+    console.log('mounted---obj1:', this.obj1)
+    /**
+     * --- {this.obj1}
+     * --------
+     * get a: ƒ reactiveGetter()
+     * set a: ƒ reactiveSetter(newVal)
+     * get c: ƒ reactiveGetter()
+     * set c: ƒ reactiveSetter(newVal)
+     * --------
+     * 可以明显看到this.obj1 上没有set b 和 get b 的function
+     */
     this.init()
   },
   methods: {
@@ -71,11 +90,23 @@ export default {
       } else {
         return '女'
       }
+    },
+    addA(item) {
+      item.a = item.a + 1
+      console.log('itemA+', item)
+    },
+    addB(item) {
+      item.b = item.b + 1
+      console.log('itemB+', item)
+    },
+    addB2() {
+      this.obj1.b = this.obj1.b +1
+      console.log('itemB+', this.obj1)
     }
   },
   computed: {
     // computed不是一个函数是无法传参的
-    sexToStr1() {  
+    sexToStr1() {
       return function(val) {
         if (+val === 0) {
           return '男'
