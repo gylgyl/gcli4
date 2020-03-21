@@ -7,6 +7,11 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "cross-env NODE_ENV=testing vue-cli-service test:unit",
+    "coverage": "cross-env NODE_ENV=testing vue-cli-service test:unit --coverage",
+    "watch": "cross-env NODE_ENV=testing vue-cli-service test:unit --watch",
+    "report": "cross-env NODE_ENV=production vue-cli-service build --report",
+    "build-deploy": "cross-env NODE_ENV=production vue-cli-service build --dest ../suo-design-pro-dist/",
+    "build-deploy-report": "cross-env NODE_ENV=production vue-cli-service build --dest ../suo-design-pro-dist/ --report",
     "genlog": "conventional-changelog -p angular -i .github/CHANGELOG.md -s"
   },
   "dependencies": {

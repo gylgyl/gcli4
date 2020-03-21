@@ -5,7 +5,8 @@ function resolve(dir) {
 }
 const pxtorem = require('postcss-pxtorem')
 module.exports = {
-  publicPath: process.env === 'production' ? '' : './',
+  // publicPath: process.env === 'production' ? '' : './',
+  publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'static',
   filenameHashing: true,
