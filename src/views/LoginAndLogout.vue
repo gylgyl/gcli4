@@ -20,7 +20,7 @@
 import { mapActions } from 'vuex'
 import { login, getUserInfo } from '@/api'
 import { getTokenPub, setTokenPub, logoutPub, checkLoginPub } from '@/utils/pub'
-
+import { GPAge } from '@/utils/config'
 export default {
   name: 'loginAndLogout',
   data() {
@@ -35,6 +35,8 @@ export default {
     this.obj1.b = 2
     this.$set(this.obj1, 'c', 0)
     console.log('mounted---obj1:', this.obj1)
+    console.log('GPAge=>', GPAge)
+    GPAge.pageSize = 10
     /**
      * --- {this.obj1}
      * --------
@@ -100,7 +102,7 @@ export default {
       console.log('itemB+', item)
     },
     addB2() {
-      this.obj1.b = this.obj1.b +1
+      this.obj1.b = this.obj1.b + 1
       console.log('itemB+', this.obj1)
     }
   },
